@@ -3,11 +3,11 @@ import Layout from '../components/Layout'
 
 function IndexPage() {
   return (
-    <Layout>
+    <Layout title='Litle Coffee'>
       <h1>Hello Next.js 👋</h1>
       <p>
-        <Link href="/about">
-          <a>About</a>
+        <Link href="/nosotros">
+          About
         </Link>
       </p>
     </Layout>

@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Layout from '../../components/Layout'
 
 function AboutPage() {
+ 
   return (
     <Layout>
       <h1>About</h1>
