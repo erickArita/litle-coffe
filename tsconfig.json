@@ -26,6 +26,7 @@
   ],
   "include": [
     "**/*.ts",
+    "**/*.js",
     "**/*.tsx"
-  ]
+, "pages/_app.tsx"  ]
 }
