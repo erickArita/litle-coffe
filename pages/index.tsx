@@ -1,14 +1,9 @@
-import Link from 'next/link'
+import Header from '../components/Header'
 
 function IndexPage() {
   return (
     <>
-      <h1>Hello Next.js 👋</h1>
-      <p>
-        <Link href="/nosotros">
-          About
-        </Link>
-      </p>
+      <Header/>
     </>
   )
 }

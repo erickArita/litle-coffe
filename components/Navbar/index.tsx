@@ -10,6 +10,7 @@ export default function Navbar() {
             src="/logo.webp"
             height={60}
             width={60}
+            layout='fixed'
             alt="logo"
           />
         </div>
@@ -34,20 +35,25 @@ export default function Navbar() {
       <style jsx>{`
         .nav{
           display:flex;
-          height:70px;
+          height:80px;
           justify-content: space-between;
           align-items: center;
           padding: 0 3rem;
-          background-color: var(--dark);
+          background-color: var(--trasparent);
+          position: -webkit-sticky; /* Safari */
+          position: fixed;
+          width:100%;
+          box-sizing: border-box;
+          top: 0;
+          z-index: 1;
         }  
         .links{
           display: flex;
+          justify-content: space-around;
         }
         .link{
           list-style: none;
-          margin-right: 1rem;
           color:var(--white);
-          background-color:var(--dark);
           border-radius: 40px;
           padding: 7px 10px;
         }

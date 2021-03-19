@@ -7,7 +7,6 @@ type ss = {
   pageProps: any[]
 }
 export default function MyApp({ Component, pageProps }: ss) {
-
   return (
     <Layout>
       <Component {...pageProps} />
