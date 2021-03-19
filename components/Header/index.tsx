@@ -1,36 +1,32 @@
-import { useEffect, useState } from "react"
-
+import Image from 'next/image'
+import { useCarrousel } from "../../hooks/useCarrousel"
+// no funciona la transicion de imagenes,
+// tiene que haber un efecto de blur 
 export default function Header() {
-  const imgs: string[] = ['/food/food.jpg', '/rest/restaurant.jpg']
-  const [backImg, setBackImg] = useState(imgs[0])
-
-  let i = 0;
-  const changeImg = () => {
-    let length = imgs.length - 1
-    i >= length ? i = 0 : i++
-    setBackImg(imgs[i])
-  }
-  useEffect(() => {
-    let id = setInterval(changeImg, 15000)
-    return () => clearInterval(id)
-  }, [])
+  const imgs: string[] = ['/rest/restaurant2.jpg', '/rest/restaurant.jpg']
+  const img = useCarrousel(imgs)
   return (
     <>
       <header className='header'>
         <div className="header__content">
           <h1 className='title'>the litle coffee</h1>
+          <Image
+            src={img}
+            className='header__image'
+            objectFit='cover'
+            layout='fill'
+            loading='lazy'
+          />
         </div>
       </header>
       <style jsx>{`
           header{
             height: 110vh;
-            background: linear-gradient(to right,rgba(68, 61, 61,.2),#c760604b), url(${backImg});
-            background-repeat: no-repeat;
-            background-size:cover ;
-            background-position: center center;
-            background-origin: padding-box;
+          }
+          .header__image{
+            z-index: -1;
             animation: traslate 1.5s ease;
-            background-attachment: fixed;
+            background: linear-gradient(to right,rgba(68, 61, 61,.2),#c760604b);
           }
           .header__content{
             display: flex;
@@ -46,10 +42,19 @@ export default function Header() {
           .title{
             color: var(--white);
             text-transform: capitalize;
+            z-index: 4;
           }
           @keyframes traslate{
-            from{ opacity: .8; }
-            to{ opacity: 1; }
+            from{ 
+              
+              filter: blur(5px);
+              /* opacity: .8; */
+            }
+            to{
+              /*opacity: 1;*/
+              filter: blur(0px);
+            }
+
           }
 
       `}</style>
