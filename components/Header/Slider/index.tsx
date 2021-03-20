@@ -9,7 +9,7 @@ export const Slider = ({ imgs }: { imgs: string[] }) => {
         <img
           className='slide'
           src={img}
-          loading='eager'
+          loading='lazy'
           alt={img}
           key={aux}
         />
