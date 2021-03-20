@@ -1,4 +1,3 @@
-import Image from "next/image";
 import useSlider from "../../../hooks/useCarrousel";
 
 export const Slider = ({ imgs }: { imgs: string[] }) => {
