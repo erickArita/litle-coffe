@@ -2,7 +2,7 @@ import Image from "next/image";
 import useSlider from "../../../hooks/useCarrousel";
 
 export const Slider = ({ imgs }: { imgs: string[] }) => {
-  const i = useSlider(imgs.length, 5000)
+  const i = useSlider(imgs.length, 30000)
 
   return (<>
     { imgs.map((img, aux) =>
@@ -18,7 +18,7 @@ export const Slider = ({ imgs }: { imgs: string[] }) => {
     )}
     <style jsx>{`
       .slide {
-        animation: fadeIn .5s ease-in;
+        animation: fadeIn .9s ease-in;
         background: linear-gradient(to right,rgba(68, 61, 61,.2),#c760604b);
         object-fit: cover;
         height: 100%;
