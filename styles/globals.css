@@ -6,11 +6,12 @@
   --pink-ligth: #50202c;
   --orange: #f36a26;
   --orange-ligth: #f67218;
-  --grey: #f7f7f7;
+  --grey: #f6f6f6;
   --white: #ffffff;
   --trasparent: trasparent;
   /* 400 */
   font-family: "PT Sans", sans-serif;
+  --serif: "PT Sans", sans-serif;
   /* regular 400  500 700 */
   --roboto: "Roboto", sans-serif;
   /* regular 400 bold 700 */
