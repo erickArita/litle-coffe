@@ -1,9 +1,12 @@
 import { Slider } from './Slider'
-import {  FaFacebook} from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
 import { Parallax } from 'react-scroll-parallax';
+import { use100vh } from 'react-div-100vh';
 
 export default function Header() {
   const imgs: string[] = ['/rest/restaurant.jpg', '/rest/restaurant2.jpg',]
+  const height = use100vh()
+  console.log(height)
   return (
     <>
       <header className='header'>
@@ -29,8 +32,8 @@ export default function Header() {
         </div>
       </header>
       <style jsx>{`
-          header{
-            height: 100vh;
+          .header{
+            height: ${height}px;
           }
           .header__content{
             display: flex;
