@@ -20,7 +20,7 @@ export default function Header() {
             </div>
           </div>
           <div className='header__main'>
-            <Parallax y={[50, -40]}  >
+            <Parallax y={[50, -20]}  >
               <div>
                 <h1 className='main__title'>the litle coffee</h1>
                 <p className='main__slogan'>Disfruta de tu comida rodeado de naturaleza</p>
