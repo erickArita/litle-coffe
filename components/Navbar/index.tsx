@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from 'next/image'
 
-export default function Navbar() {
+export default function Navbar() {  
   return (
     <>
       <nav className='nav'>
@@ -40,7 +40,6 @@ export default function Navbar() {
           align-items: center;
           padding: 0 3rem;
           background-color: var(--trasparent);
-          position: -webkit-sticky; /* Safari */
           position: fixed;
           width:100%;
           box-sizing: border-box;

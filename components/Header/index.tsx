@@ -11,7 +11,7 @@ export default function Header() {
           <div className='header__content__contact'>
             <div>
               <p>Más de nosotros</p>
-              <a href="https://www.facebook.com/coffeethelittle">
+              <a href="https://www.facebook.com/coffeethelittle" target='__black' >
                 <FaFacebook />
               </a>
             </div>
