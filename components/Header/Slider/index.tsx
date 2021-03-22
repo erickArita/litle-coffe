@@ -6,14 +6,15 @@ export const Slider = ({ imgs, interval }: { imgs: string[], interval: number })
   return (<>
     <div className='slide'>
       {imgs.map((img, aux) =>
-        i == aux && (
-          <img
-            src={img}
-            loading='lazy'
-            alt={img}
-            key={aux}
-          />
-        )
+      (
+        <img
+          src={img}
+          loading='lazy'
+          alt={img}
+          key={aux}
+          className={i == aux ? 'show' : 'none'}
+        />
+      )
       )}
     </div>
     <style jsx>{`
@@ -24,19 +25,24 @@ export const Slider = ({ imgs, interval }: { imgs: string[], interval: number })
         width: 100%;
       }  
       img{
-        
         position: relative;
-        animation: fadeIn .9s ease-in;
         object-fit: cover;
         height: 100%;
         width: 100%;
         object-position: center;
         z-index: -1;
       }
+      .none{
+        display: none;
+      }
+      .show{
+        display: initial;
+        animation: fadeIn .8s ease-in;
+      }
       @keyframes fadeIn {
         from{ 
           /* filter: blur(5px); */
-          opacity: .9; 
+          opacity: .6; 
         }
         to{
           opacity: 1;
