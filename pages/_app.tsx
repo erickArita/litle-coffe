@@ -3,11 +3,11 @@ import 'normalize.css'
 import '../styles/globals.css'
 import Layout from '../components/Layout'
 
-type ss = {
+type Component = {
   Component: FC<any>
   pageProps: any[]
 }
-export default function MyApp({ Component, pageProps }: ss) {
+export default function MyApp({ Component, pageProps }: Component) {
   return (
     <Layout>
       <Component {...pageProps} />

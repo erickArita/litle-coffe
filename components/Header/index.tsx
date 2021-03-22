@@ -29,7 +29,7 @@ export default function Header() {
                 <button className='main__button'>Ver Menu</button>
               </Parallax>
             </div>
-            <Slider imgs={imgs} interval={5000} />
+            <Slider imgs={imgs} interval={10000} />
           </div>
         </header>
       </ParallaxProvider>
