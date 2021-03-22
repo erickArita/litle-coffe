@@ -17,7 +17,7 @@
   /* regular 400 bold 700 */
   --cursiva: 'Oleo Script Swash Caps', cursive;
 
-  
+  scroll-behavior: smooth;
 }
 
 body{

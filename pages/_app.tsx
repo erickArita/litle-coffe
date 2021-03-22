@@ -1,6 +1,4 @@
 import { FC } from 'react'
-import { ParallaxProvider } from 'react-scroll-parallax'
-
 import 'normalize.css'
 import '../styles/globals.css'
 import Layout from '../components/Layout'
@@ -12,9 +10,7 @@ type ss = {
 export default function MyApp({ Component, pageProps }: ss) {
   return (
     <Layout>
-      <ParallaxProvider>
-        <Component {...pageProps} />
-      </ParallaxProvider>
+      <Component {...pageProps} />
     </Layout>
   )
 }

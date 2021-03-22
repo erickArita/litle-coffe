@@ -1,18 +1,22 @@
 import Link from "next/link";
 import Image from 'next/image'
 
-export default function Navbar() {  
+export default function Navbar() {
   return (
     <>
       <nav className='nav'>
         <div className="logo">
-          <Image
-            src="/logo.webp"
-            height={60}
-            width={60}
-            layout='fixed'
-            alt="logo"
-          />
+          <Link href='/'  >
+            <a >
+              <Image
+                src="/logo.webp"
+                height={60}
+                width={60}
+                layout='fixed'
+                alt="logo"
+              />
+            </a>
+          </Link>
         </div>
         <ul className="links">
           <li className='link'>
@@ -46,6 +50,9 @@ export default function Navbar() {
           top: 0;
           z-index: 1;
         }  
+        .logo{
+          cursor: pointer;
+        }
         .links{
           display: flex;
           justify-content: space-around;

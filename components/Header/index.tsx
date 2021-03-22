@@ -2,35 +2,37 @@ import { Slider } from './Slider'
 import { FaFacebook } from "react-icons/fa";
 import { Parallax } from 'react-scroll-parallax';
 import { use100vh } from 'react-div-100vh';
-
+import { ParallaxProvider } from 'react-scroll-parallax'
 export default function Header() {
   const imgs: string[] = ['/rest/restaurant.jpg', '/rest/restaurant2.jpg',]
   const height = use100vh()
-  console.log(height)
+  // hacer que en pc vaya mas rapido que en movil con height
   return (
     <>
-      <header className='header'>
-        <div className="header__content">
-          <div className='header__content__contact'>
-            <div>
-              <p>Más de nosotros</p>
-              <a href="https://www.facebook.com/coffeethelittle" target='__black' >
-                <FaFacebook />
-              </a>
-            </div>
-          </div>
-          <div className='header__main'>
-            <Parallax y={[-20, 20]}  >
+      <ParallaxProvider>
+        <header className='header'>
+          <div className="header__content">
+            <div className='header__content__contact'>
               <div>
-                <h1 className='main__title'>the litle coffee</h1>
-                <p className='main__slogan'>Disfruta de tu comida rodeado de naturaleza</p>
+                <p>Más de nosotros</p>
+                <a href="https://www.facebook.com/coffeethelittle" target='__black' >
+                  <FaFacebook />
+                </a>
               </div>
-              <button className='main__button'>Ver Menu</button>
-            </Parallax>
+            </div>
+            <div className='header__main'>
+              <Parallax y={[-20, 20]}>
+                <div>
+                  <h1 className='main__title'>the litle coffee</h1>
+                  <p className='main__slogan'>Disfruta de tu comida rodeado de naturaleza</p>
+                </div>
+                <button className='main__button'>Ver Menu</button>
+              </Parallax>
+            </div>
+            <Slider imgs={imgs} interval={5000} />
           </div>
-          <Slider imgs={imgs} interval={5000} />
-        </div>
-      </header>
+        </header>
+      </ParallaxProvider>
       <style jsx>{`
           .header{
             height: ${height}px;
