@@ -31,9 +31,11 @@ export const Slider = ({ imgs, interval }: { imgs: string[], interval: number })
         width: 100%;
         object-position: center;
         z-index: -1;
+        will-change: opacity;
       }
       .none{
         display: none;
+        will-change: opacity;
       }
       .show{
         display: initial;

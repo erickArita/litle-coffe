@@ -48,7 +48,7 @@ export default function Navbar() {
           width:100%;
           box-sizing: border-box;
           top: 0;
-          z-index: 1;
+          z-index: 2;
         }  
         .logo{
           cursor: pointer;

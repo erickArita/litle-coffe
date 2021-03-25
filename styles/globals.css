@@ -1,11 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,300&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps:wght@400;700&display=swap");
 :root {
   --dark: #161b22;
   --pink-ligth: #50202c;
   --orange: #f36a26;
-  --orange-ligth: #f67218;
+  --orange-ligth: #f67118e0;
+  --cafe:#ad8b6d;
   --grey: #f6f6f6;
   --white: #ffffff;
   --trasparent: trasparent;
@@ -15,14 +16,54 @@
   /* regular 400  500 700 */
   --roboto: "Roboto", sans-serif;
   /* regular 400 bold 700 */
-  --cursiva: 'Oleo Script Swash Caps', cursive;
+  --cursiva: "Oleo Script Swash Caps", cursive;
 
   scroll-behavior: smooth;
 }
 
-body{
+body {
   height: 200vh;
 }
 
+.title {
+  color: var(--grey);
+  text-transform: capitalize;
+  line-break: unset;
+  margin: 0;
+  font-family: var(--cursiva);
+}
+.subtitle{
+  font-size: 50px;
+  margin: 0;
+  font-family: var(--cursiva);
+}
+.row{
+  /* background-color: var(--white);
+  margin: 2rem;
+  box-shadow:  0 0 14px 0px #00000054; */
+  display: flex;
+}
+.white{
+  color: var(--white);
+}
+.pink{
+  color: var(--pink-ligth);
+}
+.reverse {
+  flex-direction: row-reverse;
+}
+.roboto {
+  font-family: var(--roboto);
+}
+.mt{
+  margin-top: 2rem;
+}
+.h100{
+  height: 100vh;
+}
 
- 
+@media (max-width: 425px) {
+  .title {
+    font-size: 70px;
+  }
+}

@@ -9,7 +9,7 @@ type Component = {
 }
 export default function MyApp({ Component, pageProps }: Component) {
   return (
-    <Layout>
+    <Layout title='Litle Coffee'>
       <Component {...pageProps} />
     </Layout>
   )

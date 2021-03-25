@@ -3,10 +3,11 @@ import { FaFacebook } from "react-icons/fa";
 import { Parallax } from 'react-scroll-parallax';
 import { use100vh } from 'react-div-100vh';
 import { ParallaxProvider } from 'react-scroll-parallax'
-export default function Header() {
+import { Client } from '../../pages'
+export default function Header({ isMovile }: Client) {
   const imgs: string[] = ['/rest/restaurant.jpg', '/rest/restaurant2.jpg',]
   const height = use100vh()
-  // hacer que en pc vaya mas rapido que en movil con height
+  console.log(Boolean(isMovile));
   return (
     <>
       <ParallaxProvider>
@@ -15,7 +16,10 @@ export default function Header() {
             <div className='header__content__contact'>
               <div>
                 <p>Más de nosotros</p>
-                <a href="https://www.facebook.com/coffeethelittle" target='__black' >
+                <a href={isMovile ?
+                  "fb://coffeethelittle":
+                  'https://www.facebook.com/coffeethelittle'}
+                  target='__blank'  >
                   <FaFacebook />
                 </a>
               </div>
@@ -23,10 +27,10 @@ export default function Header() {
             <div className='header__main'>
               <Parallax y={[-20, 20]}>
                 <div>
-                  <h1 className='main__title'>the litle coffee</h1>
-                  <p className='main__slogan'>Disfruta de tu comida rodeado de naturaleza</p>
+                  <h1 className='title'>the litle coffee</h1>
+                  <p className='main__slogan roboto'>Disfruta de tu comida rodeado de naturaleza</p>
                 </div>
-                <button className='main__button'>Ver Menu</button>
+                <button className='main__button roboto'>Ver Menu</button>
               </Parallax>
             </div>
             <Slider imgs={imgs} interval={10000} />
@@ -45,7 +49,7 @@ export default function Header() {
             display: flex;
             align-items: center;
             height: inherit;
-            font-family: var(--cursiva);
+            
             font-size: 40px;
             text-align: center;
           }
@@ -89,22 +93,15 @@ export default function Header() {
             z-index: 1;
           
           }
-          .main__title{
-            color: var(--grey);
-            text-transform: capitalize;
-            line-break: unset;
-            margin: 0;
-           }
+          
          
           .main__slogan{
             font-size: 18px;
             color: var(--white);
-            font-family: var(--roboto);
           }
           
           .main__button{
-            font-family: var(--roboto);
-            font-weight: 700;
+             font-weight: 700;
             font-size: 15px;
             background: transparent;
             color: var(--grey);
@@ -121,11 +118,7 @@ export default function Header() {
             border: solid 2px var(--orange-ligth);
           }
 
-        @media (max-width:425px){
-          .main__title{
-            font-size: 70px;
-          }
-        }
+        
         @media (max-width:768px){
         /*media queries para el contenido a la izquierda  */
           .header__content__contact{
