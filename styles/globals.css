@@ -24,7 +24,9 @@
 body {
   height: 200vh;
 }
-
+.cursiva{
+  font-family: var(--cursiva);
+}
 .title {
   color: var(--grey);
   text-transform: capitalize;
@@ -35,7 +37,7 @@ body {
 .subtitle{
   font-size: 50px;
   margin: 0;
-  font-family: var(--cursiva);
+ 
 }
 .row{
   /* background-color: var(--white);

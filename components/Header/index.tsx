@@ -1,42 +1,44 @@
 import { Slider } from './Slider'
 import { FaFacebook } from "react-icons/fa";
-import { Parallax } from 'react-scroll-parallax';
 import { use100vh } from 'react-div-100vh';
-import { ParallaxProvider } from 'react-scroll-parallax'
 import { Client } from '../../pages'
+import { Parallax } from 'react-parallax';
 export default function Header({ isMovile }: Client) {
   const imgs: string[] = ['/rest/restaurant.jpg', '/rest/restaurant2.jpg',]
   const height = use100vh()
   console.log(Boolean(isMovile));
   return (
     <>
-      <ParallaxProvider>
-        <header className='header'>
-          <div className="header__content">
-            <div className='header__content__contact'>
-              <div>
-                <p>Más de nosotros</p>
-                <a href={isMovile ?
-                  "fb://coffeethelittle":
-                  'https://www.facebook.com/coffeethelittle'}
-                  target='__blank'  >
-                  <FaFacebook />
-                </a>
-              </div>
+      <header className='header'>
+        <div className="header__content">
+          <div className='header__content__contact'>
+            <div>
+              <p>Más de nosotros</p>
+              <a href={isMovile ?
+                "fb://coffeethelittle" :
+                'https://www.facebook.com/coffeethelittle'}
+                target='__blank'  >
+                <FaFacebook />
+              </a>
             </div>
-            <div className='header__main'>
-              <Parallax y={[-20, 20]}>
-                <div>
-                  <h1 className='title'>the litle coffee</h1>
-                  <p className='main__slogan roboto'>Disfruta de tu comida rodeado de naturaleza</p>
-                </div>
-                <button className='main__button roboto'>Ver Menu</button>
-              </Parallax>
-            </div>
-            <Slider imgs={imgs} interval={10000} />
           </div>
-        </header>
-      </ParallaxProvider>
+          <div className='header__main'>
+            <Parallax
+              strength={200}
+              renderLayer={por =>
+                <div style={{ marginBottom: '4rem', marginTop: `${por * 8}rem` }}>
+                  <div>
+                    <h1 className='title'>the litle coffee</h1>
+                    <p className='main__slogan roboto'>Disfruta de tu comida rodeado de naturaleza</p>
+                  </div>
+                  <button className='main__button roboto'>Ver Menu</button>
+                </div>
+              }
+            />
+          </div>
+          <Slider imgs={imgs} interval={10000} />
+        </div>
+      </header>
       <style jsx>{`
           .header{
             height: ${height}px;
@@ -49,10 +51,10 @@ export default function Header({ isMovile }: Client) {
             display: flex;
             align-items: center;
             height: inherit;
-            
             font-size: 40px;
             text-align: center;
           }
+          
           .header__content__contact{
             position: absolute;
             display: flex;
@@ -91,17 +93,15 @@ export default function Header({ isMovile }: Client) {
           }
           .header__main{
             z-index: 1;
-          
           }
           
-         
           .main__slogan{
             font-size: 18px;
             color: var(--white);
           }
           
           .main__button{
-             font-weight: 700;
+            font-weight: 700;
             font-size: 15px;
             background: transparent;
             color: var(--grey);
@@ -118,7 +118,6 @@ export default function Header({ isMovile }: Client) {
             border: solid 2px var(--orange-ligth);
           }
 
-        
         @media (max-width:768px){
         /*media queries para el contenido a la izquierda  */
           .header__content__contact{

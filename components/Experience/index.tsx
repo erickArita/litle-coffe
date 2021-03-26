@@ -4,7 +4,7 @@ function Experience() {
   return (
     <>
       <section className='experience'>
-        <h2 className='subtitle pink'>Tu experiencia</h2>
+        <h2 className='subtitle pink cursiva'>Tu experiencia</h2>
         <div className="card">
           <ul className='experience__list'>
             <li className='experience__list__item' >
@@ -22,7 +22,7 @@ function Experience() {
               </div>
               <div className="content">
                 <h4>Atención al cliente</h4>
-                <p>Le brindaremos una exelente atención para que te sientas como en casa</p>
+                <p>Le brindaremos una exelente atención para que te sientas como en casa.</p>
               </div>
             </li>
             <li className='experience__list__item'>
@@ -76,6 +76,7 @@ function Experience() {
         margin-top: 1rem;
         border-radius: 10px;
         padding-left:  .7rem;
+        background-color: var(--white);
       }
        
       .icon{
@@ -98,6 +99,9 @@ function Experience() {
       @media(max-width:768px){
         section{
           height: auto;
+        }
+        .subtitle{
+          margin-top: 2rem;
         }
         .experience__list{
           padding-left:0%; 
