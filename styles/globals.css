@@ -21,9 +21,7 @@
   scroll-behavior: smooth;
 }
 
-body {
-  height: 200vh;
-}
+ 
 .cursiva{
   font-family: var(--cursiva);
 }
@@ -51,8 +49,12 @@ body {
 .pink{
   color: var(--pink-ligth);
 }
+.cafe{
+  color: var(--cafe);
+}
 .reverse {
-  flex-direction: row-reverse;
+  flex-direction: row-reverse ;
+
 }
 .roboto {
   font-family: var(--roboto);

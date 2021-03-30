@@ -1,46 +1,22 @@
 import { NextPageContext } from 'next'
-import { Parallax } from 'react-parallax'
 // import About from '../components/About'
 import Experience from '../components/Experience'
 import Header from '../components/Header'
+import Menu from '../components/Menu'
+import Separator from '../components/Separator'
 // import Location from '../components/Location'
-import Specialities from '../components/Specialities'
+import Specials from '../components/Specialities'
 
-export type Client = { isMovile: string }
+export type Client = { isMovile: boolean }
 function IndexPage({ isMovile }: Client) {
   return (
     <>
       <Header isMovile={isMovile} />
       <Experience />
-
-      <Parallax
-        blur={{ min: 20, max: -31 }}
-        bgImage={'/food/makeCoffe.jpg'}
-        bgImageAlt="maquina de cafe"
-        bgImageStyle={{
-          height: '100%',
-          objectFit: 'cover',
-          objectPosition: 'center'
-        }}
-        strength={100}
-      >
-        <div className='separator' style={{ height: '70vh' }} >
-          <h4 className='subtitle white'>Especiales</h4>
-        </div>
-      </Parallax>
-      <Specialities />
-      <style jsx>{`
-        .separator{
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-        @media(max-width:425px){
-          .separator{
-            height: 30vh!important;
-          }
-        }
-    `}</style>
+      <Separator isMovile={isMovile} title='Especiales' img='/food/makeCoffe.jpg' />
+      <Specials />
+      <Separator isMovile={isMovile} title='Menu' img='/camarera.jpg' />
+      <Menu />
     </>
   )
 }
