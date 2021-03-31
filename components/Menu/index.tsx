@@ -1,34 +1,23 @@
 import React, { useState } from "react"
-
-
-const Bebidas = () =>
-  <>
-    <ul>
-      <li>hola</li>
-      <li>hola2</li>
-      <li>hola2</li>
-    </ul>
-  </>
-
-const Comidas = () =>
-  <>
-    <ul>
-      <li>hola</li>
-      <li>hola</li>
-      <li>hola</li>
-    </ul>
-  </>
-
+import { food } from "../../utils/menu"
+import MenuItem from "./MenuItem"
 
 const Menu = () => {
   const [index, setIndex] = useState<number>(0)
-  const component = [< Comidas />, <Bebidas />]
+  // const component = [< Comidas />, <Bebidas />]
   return (
     <>
-      <section className='h100 menu'>
+      <section className='menu '>
         <div className="menu__container">
           <div className='menu__item'>
-            {component[index]}
+            {/* {component[index]}      */}
+            {
+              index == 0 ? <>
+                <MenuItem food={food} title='Desayunos/Cenas' />
+                <MenuItem food={food} title='Almuerzos' />
+              </>:
+                <MenuItem food={food} title='Almuerzos' />
+            }
           </div>
           <div className='buttons'>
             <button onClick={() => setIndex(0)}>Comidas</button>
@@ -43,25 +32,27 @@ const Menu = () => {
           justify-content: center;
           align-items: center;
           flex-direction: column;
+          min-height: 100vh;
+          height: auto;
         }
         .menu__container {
           display: flex;
           flex-direction: column;
-          justify-content: center;
-          
-          background-color: var(--white);
           height: 80%;
-          width: 80%;
         }
         .menu__item{
-          align-self: center;
-          justify-self: center;
-          width: 10%;
+          margin: 1rem;
+          column-count: 2;
+          column-gap: 3rem;
+          column-rule-color: black; 
+          column-rule-style: dotted;
+          column-rule-width: 2px;
         }
         .buttons {
           align-self: center;
           justify-self: flex-end;
         }
+       
       `}</style>
     </>
   )
