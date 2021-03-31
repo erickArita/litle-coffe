@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { food } from "../../utils/menu"
+import { desayuno } from "../../utils/menu"
 import MenuItem from "./MenuItem"
 
 const Menu = () => {
@@ -10,13 +10,12 @@ const Menu = () => {
       <section className='menu '>
         <div className="menu__container">
           <div className='menu__item'>
-            {/* {component[index]}      */}
             {
               index == 0 ? <>
-                <MenuItem food={food} title='Desayunos/Cenas' />
-                <MenuItem food={food} title='Almuerzos' />
+                <MenuItem food={desayuno} title='Desayunos/Cenas' />
+                <MenuItem food={desayuno} title='Almuerzos' />
               </>:
-                <MenuItem food={food} title='Almuerzos' />
+                <MenuItem food={desayuno} title='Almuerzos' />
             }
           </div>
           <div className='buttons'>
@@ -39,18 +38,30 @@ const Menu = () => {
           display: flex;
           flex-direction: column;
           height: 80%;
+          width: 100%;
         }
         .menu__item{
-          margin: 1rem;
+          margin:0 5%;
           column-count: 2;
           column-gap: 3rem;
           column-rule-color: black; 
           column-rule-style: dotted;
           column-rule-width: 2px;
+          column-fill: 2px;
+          width: auto;
         }
         .buttons {
+          position: sticky;
+          bottom: 0;
           align-self: center;
           justify-self: flex-end;
+        }
+         
+        @media(max-width:425px){
+          .menu__item{
+            column-count: 1;
+          }
+           
         }
        
       `}</style>

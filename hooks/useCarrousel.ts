@@ -3,8 +3,7 @@ import { useEffect, useState } from "react";
 const useSlider = (length: number, interval: number): number => {
 
   const [index, setIndex] = useState<number>(0)
-  console.log(index)
-
+ 
   function nextS() {
     setIndex(index + 1)
   }

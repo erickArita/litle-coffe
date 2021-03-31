@@ -7,11 +7,9 @@ const MenuItem = ({ food, title }: { food: Food[], title: string }) => {
         {
           food.map((e, i) =>
             <li key={i}>
-              <h5 className='menuList__title pink'>{e.food}</h5>
-              <div className="description">
-                <p className='roboto'>{e.description}{' '}.....................
-                <span className='price'>${e.price}</span></p>
-              </div>
+              <h5 className='menuList__title pink'>{e.food}
+                <span className='price'>..........${e.price}</span> </h5>
+              {e.description.length > 1 && <p className='roboto'>{e.description}</p>}
             </li>
           )
         }
@@ -23,12 +21,17 @@ const MenuItem = ({ food, title }: { food: Food[], title: string }) => {
           font-size: 30px;
           margin-top: 1rem;
           margin-bottom: 1rem;
-        }
+         }
+
         .menuList {
-          list-style: none;
-          padding: 0;
+           padding: 0;
+          padding-left: 1rem;
+          list-style-type: circle;
         }
-        .description p{
+        .menuList__title{
+          text-decoration: dotted;
+        }
+        .p{
           margin: 0;
           margin-right: 1rem;
           color: #a59d9d !important;
@@ -47,7 +50,7 @@ const MenuItem = ({ food, title }: { food: Food[], title: string }) => {
           margin: 0;
           margin-bottom: 5px;
         }
-        
+       .p{}
        
     `}</style>
     </>
