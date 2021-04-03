@@ -1,4 +1,3 @@
-import React from 'react'
 import { Parallax } from 'react-parallax'
 
 const Separator = ({ isMovile, img, title }: { isMovile: boolean, img: string, title: string }) => {

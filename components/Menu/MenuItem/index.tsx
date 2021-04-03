@@ -2,7 +2,10 @@ import { Food } from '../../../utils/menu'
 const MenuItem = ({ food, title }: { food: Food[], title: string }) => {
   return (
     <>
-      <h3 className='title cafe'>{title}</h3>
+      <div className='title'>
+        <h3 className=' cafe'>{title}</h3>
+        <hr />
+      </div>
       <ul className='menuList'>
         {
           food.map((e, i) =>

@@ -1,4 +1,5 @@
 
+import Image from 'next/image'
 import { SpecialCard } from '../../../utils/specials'
 const CardSpecial = ({ card }: { card: SpecialCard[] }) => {
   return (
@@ -12,7 +13,12 @@ const CardSpecial = ({ card }: { card: SpecialCard[] }) => {
               <p className="price">${price}</p>
             </div>
             <div className="card__img">
-              <img src={img} />
+              <Image
+                layout='fixed'
+                width='200px'
+                height='200px'
+                src={img}
+              />
             </div>
           </div >
         )

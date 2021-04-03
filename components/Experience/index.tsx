@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { BsPersonCheck } from "react-icons/bs"
 
 function Experience() {
@@ -36,12 +37,22 @@ function Experience() {
               </div>
             </li>
           </ul>
-          <img src='/personal.jpg' />
+          <div className='img'>
+            <Image
+              src='/personal.jpg'
+              layout='intrinsic'
+              objectFit='cover'
+              objectPosition='center'
+              width={400}
+              height={400}
+            />
+          </div>
         </div>
       </section>
       <style jsx>{`
       section {
         height: 110vh;
+     
         background: var(--grey);
         display: flex;
         flex-direction: column;
@@ -78,7 +89,7 @@ function Experience() {
         padding-left:  .7rem;
         background-color: var(--white);
       }
-       
+      
       .icon{
         width: 80px;
         height: 80px;

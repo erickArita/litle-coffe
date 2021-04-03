@@ -14,7 +14,7 @@ const Menu = () => {
               index == 0 ? <>
                 <MenuItem food={desayuno} title='Desayunos/Cenas' />
                 <MenuItem food={desayuno} title='Almuerzos' />
-              </>:
+              </> :
                 <MenuItem food={desayuno} title='Almuerzos' />
             }
           </div>
@@ -52,7 +52,7 @@ const Menu = () => {
         }
         .buttons {
           position: sticky;
-          bottom: 0;
+          bottom: 20px;
           align-self: center;
           justify-self: flex-end;
         }

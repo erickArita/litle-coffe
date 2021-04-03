@@ -1,3 +1,4 @@
+
 import useSlider from "../../../hooks/useCarrousel";
 
 export const Slider = ({ imgs, interval }: { imgs: string[], interval: number }) => {
@@ -9,7 +10,7 @@ export const Slider = ({ imgs, interval }: { imgs: string[], interval: number })
       (
         <img
           src={img}
-          loading='lazy'
+          loading='eager'
           alt={img}
           key={aux}
           className={i == aux ? 'show' : 'none'}
