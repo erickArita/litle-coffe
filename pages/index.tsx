@@ -13,9 +13,9 @@ function IndexPage({ isMovile }: Client) {
     <>
       <Header isMovile={isMovile} />
       <Experience />
-      <Separator isMovile={isMovile} title='Especiales' img='/food/makeCoffe.jpg' />
+      <Separator isMovile={isMovile} title='Especiales' img='/food/makeCoffe.webp' />
       <Specials />
-      <Separator isMovile={isMovile} title='Menu' img='/camarera.jpg' />
+      <Separator isMovile={isMovile} height={800} title='Menu' img='/camarera.webp' />
       <Menu />
     </>
   )

@@ -1,6 +1,6 @@
 import { Parallax } from 'react-parallax'
 
-const Separator = ({ isMovile, img, title }: { isMovile: boolean, img: string, title: string }) => {
+const Separator = ({ isMovile, img, title, height = 700 }: { isMovile: boolean, img: string, title: string, height?: number }) => {
   return (
     <>
       <Parallax
@@ -8,7 +8,7 @@ const Separator = ({ isMovile, img, title }: { isMovile: boolean, img: string, t
         bgImage={img}
         bgImageAlt="maquina de cafe"
         bgImageStyle={{
-          height: isMovile ? 300 : 700,
+          height: isMovile ? 300 : height ,
           objectFit: 'cover',
           objectPosition: isMovile ? 'bottom' : 'bottom'
         }}

@@ -39,7 +39,7 @@ function Experience() {
           </ul>
           <div className='img'>
             <Image
-              src='/personal.jpg'
+              src='/personal9.webp'
               layout='intrinsic'
               objectFit='cover'
               objectPosition='center'

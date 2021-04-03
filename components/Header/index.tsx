@@ -4,7 +4,7 @@ import { use100vh } from 'react-div-100vh';
 import { Client } from '../../pages'
 import { Parallax } from 'react-parallax';
 export default function Header({ isMovile }: Client) {
-  const imgs: string[] = ['/rest/restaurante.webp', '/rest/restaurant2.jpg',]
+  const imgs: string[] = ['/rest/restaurant.webp', '/rest/restaurant2.webp',]
   const height = use100vh()
   return (
     <>
