@@ -18,10 +18,10 @@ const Specials = () => {
             align-items: center;
           }
           .container{
-           display: grid;
-           grid-template-rows: repeat(2,200px);
-           grid-template-columns: repeat(2,400px);
-              box-shadow: -1px 1px 20px 2px #ccc;
+            display: grid;
+            grid-template-rows: repeat(2,200px);
+            grid-template-columns: repeat(2,400px);
+            box-shadow: -1px 1px 20px 2px #ccc;
           }
         
           @media(max-width:799px) {

@@ -10,7 +10,7 @@ export const Slider = ({ imgs, interval }: { imgs: string[], interval: number })
       (
         <img
           src={img}
-          loading='eager'
+          loading='lazy'
           alt={img}
           key={aux}
           className={i == aux ? 'show' : 'none'}

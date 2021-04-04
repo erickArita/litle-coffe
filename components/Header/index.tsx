@@ -27,7 +27,8 @@ export default function Header({ isMovile }: Client) {
               renderLayer={por =>
                 <div style={{ marginBottom: '4rem', marginTop: `${por * 8}rem` }}>
                   <div>
-                    <h1 className='title'>the litle coffee</h1>
+                    <h1 className='title'><span lang='en'>the litle coffee</span>
+                    </h1>
                     <p className='main__slogan roboto'>Disfruta de tu comida rodeado de naturaleza</p>
                   </div>
                   <button className='main__button roboto'>Ver Menu</button>
