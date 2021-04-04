@@ -14,7 +14,7 @@ const Separator = ({ isMovile, img, title, height = 700 }: { isMovile: boolean, 
         }}
         strength={100}
       >
-        <div className='separator' style={{ height: '60vh' }} >
+        <div className='separator' style={{ height: '25rem',width:'100vw' }} >
           <h4 className='subtitle white'>{title}</h4>
         </div>
       </Parallax>
