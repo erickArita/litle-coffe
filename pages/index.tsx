@@ -8,14 +8,16 @@ import Separator from '../components/Separator'
 import Specials from '../components/Specialities'
 
 export type Client = { isMovile: boolean }
+
 function IndexPage({ isMovile }: Client) {
+  const mobile = isMovile ? 'Mobile' : ''
   return (
     <>
       <Header isMovile={isMovile} />
       <Experience />
-      <Separator isMovile={isMovile} title='Especiales' img='/makeCoffeMobile.webp' />
+      <Separator isMovile={isMovile} title='Especiales' img={`/makeCoffe${mobile}.webp`} />
       <Specials />
-      <Separator isMovile={isMovile} height={800} title='Menu' img='/camareraMobile.webp' />
+      <Separator isMovile={isMovile} height={800} title='Menu' img={`/camarera${mobile}.webp`} />
       <Menu />
     </>
   )
