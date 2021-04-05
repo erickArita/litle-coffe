@@ -4,8 +4,12 @@ import { use100vh } from 'react-div-100vh';
 import { Client } from '../../pages'
 import { Parallax } from 'react-parallax';
 export default function Header({ isMovile }: Client) {
-  const imgs: string[] = ['/rest/restaurant.webp', '/rest/restaurant2.webp',]
+  const imgs: string[] = isMovile ? ['/rest/mobile.webp', '/rest/mobile2.webp']
+    : ['/rest/restaurant.webp', '/rest/restaurant2.webp']
+  console.log(imgs);
+
   const height = use100vh()
+
   return (
     <>
       <header className='header'>
