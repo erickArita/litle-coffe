@@ -1,7 +1,9 @@
 
+import { memo } from "react";
 import useSlider from "../../../hooks/useCarrousel";
 
-export const Slider = ({ imgs, interval }: { imgs: string[], interval: number }) => {
+const Slider = ({ imgs, interval }: { imgs: string[], interval: number }) => {
+
   const i = useSlider(imgs.length, interval)
 
   return (<>
@@ -10,7 +12,7 @@ export const Slider = ({ imgs, interval }: { imgs: string[], interval: number })
       (
         <img
           src={img}
-          loading='lazy'
+         
           alt={img}
           key={aux}
           className={i == aux ? 'show' : 'none'}
@@ -55,7 +57,7 @@ export const Slider = ({ imgs, interval }: { imgs: string[], interval: number })
     `}</style>
   </>)
 }
-
+export default memo(Slider)
 
 
 

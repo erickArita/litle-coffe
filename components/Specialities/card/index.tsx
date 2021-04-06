@@ -14,10 +14,10 @@ const CardSpecial = ({ card }: { card: SpecialCard[] }) => {
             </div>
             <div className="card__img">
               <Image
-                layout='fixed'
-                width='200px'
-                height='200px'
+                width={200}
+                height={200}
                 src={img}
+                layout='responsive'
               />
             </div>
           </div >
@@ -26,7 +26,7 @@ const CardSpecial = ({ card }: { card: SpecialCard[] }) => {
       <style jsx>{`
           .specials__card{
             display: flex;
-            flex-wrap: wrap;
+            
             width: auto;
           }
           .specials__card:nth-child(3),
@@ -57,14 +57,11 @@ const CardSpecial = ({ card }: { card: SpecialCard[] }) => {
             color:var(--cafe) !important;
             font-weight: 900;
           }
-          .card__img img{
-            width: 50%;
-          }
-          .card__img img{
-            object-fit: contain;
+          .card__img {
             width: 200px;
             height: 200px;
           }
+           
 
           @media(max-width:799px) {
             .specials__card{
@@ -75,38 +72,33 @@ const CardSpecial = ({ card }: { card: SpecialCard[] }) => {
             }
             .specials__card{
               display: flex;
-              
-            }
-            .card__img img {
-              object-fit: contain;
-              max-height: 200px;
-              max-width: 200px;
-              min-width: 150px;
-              min-height: 150px;
             }
           }
           @media(max-width:425px) {
           
-          .specials__card{
-            display: flex;
+            .specials__card{
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: center;
+
+            }
+            
+            .card__text{
+              justify-content: space-around;
+              padding: auto 0rem;
+              background-color: var(--white);
+              max-width: 200px;
+              height:200px;
+              box-sizing: border-box;
+            }
+            .card__text h4{
+              font-size: 20px;
+              margin: .2rem;
+            }
+            .card__text p{
+              margin: 0;
+            }
           }
-          .card__img img {
-            object-fit: contain;
-          }
-          .card__text{
-            justify-content: space-around;
-            padding: .7rem 0rem;
-            background-color: var(--white);
-            max-width: 50%;
-            height:200px;
-            box-sizing: border-box;
-          }
-          .card__img img {
-            object-fit: cover;
-            width: 50vw;
-            height: 200px;
-          }
-        }
       `}</style>
     </>
   )

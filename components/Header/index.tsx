@@ -1,14 +1,16 @@
-import { Slider } from './Slider'
+import Slider from './Slider'
 import { FaFacebook } from "react-icons/fa";
 import { use100vh } from 'react-div-100vh';
 import { Client } from '../../pages'
 import { Parallax } from 'react-parallax';
+import { useMemo } from 'react';
 export default function Header({ isMovile }: Client) {
-  const imgs: string[] = isMovile ? ['/rest/mobile.webp', '/rest/mobile2.webp']
-    : ['/rest/restaurant.webp', '/rest/restaurant2.webp']
-  console.log(imgs);
 
   const height = use100vh()
+  const imgs: string[] = useMemo(() =>
+    isMovile ? ['/rest/mobile.webp', '/rest/mobile2.webp']
+      : ['/rest/restaurant.webp', '/rest/restaurant2.webp'],
+    [isMovile])
 
   return (
     <>
@@ -22,7 +24,7 @@ export default function Header({ isMovile }: Client) {
                 'https://www.facebook.com/coffeethelittle'}
                 target='__blank'  >
                 <FaFacebook />
-                
+
               </a>
             </div>
           </div>
