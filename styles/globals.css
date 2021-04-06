@@ -65,6 +65,24 @@
   height: 100vh;
 }
 
+.button{
+  font-weight: 700;
+  font-size: 15px;
+  background: transparent;
+  color: var(--grey);
+  outline: none;
+  border: solid 2px var(--white);
+  padding: .5rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.button:focus{
+  outline: none;
+}
+.active,button:hover{
+  border: solid 2px var(--orange-ligth);
+}  
+
 @media (max-width: 425px) {
   .title {
     font-size: 70px;

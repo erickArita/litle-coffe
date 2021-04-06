@@ -1,10 +1,10 @@
 import React, { useState } from "react"
+import { FaBeer, FaUtensils } from "react-icons/fa"
 import { desayuno } from "../../utils/menu"
 import MenuItem from "./MenuItem"
 
 const Menu = () => {
   const [index, setIndex] = useState<number>(0)
-  // const component = [< Comidas />, <Bebidas />]
   return (
     <>
       <section className='menu '>
@@ -18,9 +18,21 @@ const Menu = () => {
                 <MenuItem food={desayuno} title='Almuerzos' />
             }
           </div>
-          <div className='buttons'>
-            <button onClick={() => setIndex(0)}>Comidas</button>
-            <button onClick={() => setIndex(1)}>Bebidas</button>
+          <div className='menu__food'>
+            <ul className='menu__food__buttoms'>
+              <li>
+                <button className={`button ${index == 0 && 'active'}`} onClick={() => setIndex(0)}>
+                  <FaUtensils />
+                  Comidas
+                </button>
+              </li>
+              <li>
+                <button className={`button ${index == 1 && 'active'}`} onClick={() => setIndex(1)}>
+                  <FaBeer />
+                  Bebidas
+                </button>
+              </li>
+            </ul>
           </div>
         </div>
       </section>
@@ -50,20 +62,38 @@ const Menu = () => {
           column-fill: 2px;
           width: auto;
         }
-        .buttons {
+        .menu__food {
           position: sticky;
-          bottom: 20px;
-          align-self: center;
-          justify-self: flex-end;
+          bottom: 0;
+          display: flex;
+          justify-content: space-around;
+          height: 4rem;
+          background-color: var(--dark);
+          width: 100%;
         }
-         
+        .menu__food__buttoms {
+          display: flex;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          align-items: center;
+          color: white;
+          justify-content: space-around;
+          width: 70%;
+        }
+        .menu__food__buttoms button {
+          color: white;
+          font-size: 15px;
+        }
+       
+        .menu__food__buttoms button>:first-child {
+          margin-right: .5rem;
+        }
         @media(max-width:425px){
           .menu__item{
             column-count: 1;
           }
-           
         }
-       
       `}</style>
     </>
   )

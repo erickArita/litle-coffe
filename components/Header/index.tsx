@@ -24,7 +24,6 @@ export default function Header({ isMovile }: Client) {
                 'https://www.facebook.com/coffeethelittle'}
                 target='__blank'  >
                 <FaFacebook />
-
               </a>
             </div>
           </div>
@@ -38,7 +37,8 @@ export default function Header({ isMovile }: Client) {
                     </h1>
                     <p className='main__slogan roboto'>Disfruta de tu comida rodeado de naturaleza</p>
                   </div>
-                  <button className='main__button roboto'>Ver Menu</button>
+                  <button className='button'>Ver Menu</button>
+
                 </div>
               }
             />
@@ -95,7 +95,7 @@ export default function Header({ isMovile }: Client) {
             height: 30px;
             margin-top: 10px;
             margin-right: 5px;
-            border-right: 2px solid var(--white) ;
+            border-right: 2px solid var(--white);
             z-index: 10;
           }
           .header__main{
@@ -107,23 +107,8 @@ export default function Header({ isMovile }: Client) {
             color: var(--white);
           }
           
-          .main__button{
-            font-weight: 700;
-            font-size: 15px;
-            background: transparent;
-            color: var(--grey);
-            outline: none;
-            border: solid 2px var(--white);
-            padding: .5rem 1rem;
-            cursor: pointer;
-            border-radius: 5px;
-          }
-          .main__button:focus{
-            outline: none;
-          }
-          .main__button:hover{
-            border: solid 2px var(--orange-ligth);
-          }
+          .main__button {}
+         
 
         @media (max-width:768px){
         /*media queries para el contenido a la izquierda  */
