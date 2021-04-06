@@ -5,6 +5,7 @@ import MenuItem from "./MenuItem"
 
 const Menu = () => {
   const [index, setIndex] = useState<number>(0)
+  console.log('hola');
   return (
     <>
       <section className='menu '>
