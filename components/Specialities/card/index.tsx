@@ -18,6 +18,7 @@ const CardSpecial = ({ card }: { card: SpecialCard[] }) => {
                 height={200}
                 src={img}
                 layout='responsive'
+                alt={`imagen de ${title}`} 
               />
             </div>
           </div >

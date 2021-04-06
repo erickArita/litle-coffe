@@ -1,4 +1,5 @@
 
+import Image from "next/image";
 import { memo } from "react";
 import useSlider from "../../../hooks/useCarrousel";
 
@@ -10,13 +11,17 @@ const Slider = ({ imgs, interval }: { imgs: string[], interval: number }) => {
     <div className='slide'>
       {imgs.map((img, aux) =>
       (
-        <img
-          src={img}
-         
-          alt={img}
+        <div className={`img ${i == aux ? 'show' : 'none'}`}
           key={aux}
-          className={i == aux ? 'show' : 'none'}
-        />
+        >
+          <Image
+            src={img}
+
+            alt={img}
+            layout='fill'
+            objectFit='cover'
+          />
+        </div>
       )
       )}
     </div>
@@ -27,14 +32,9 @@ const Slider = ({ imgs, interval }: { imgs: string[], interval: number }) => {
         height: 100%;
         width: 100%;
       }  
-      img{
-        position: relative;
-        object-fit: cover;
-        height: 100%;
-        width: 100%;
-        object-position: center;
-        z-index: -1;
-        will-change: opacity;
+      .img{
+        background: linear-gradient(to right,rgba(68, 61, 61,.4),rgba(199, 96, 96, 0.4)); 
+
       }
       .none{
         display: none;
