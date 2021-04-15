@@ -17,7 +17,7 @@ export default function Header({ isMovile }: Client) {
       <header className='header'>
         <div className="header__content">
           <div className='header__content__contact'>
-            <div>
+            <div  >
               <p>Más de nosotros</p>
               <a href={isMovile ?
                 "fb://coffeethelittle" :
@@ -38,7 +38,6 @@ export default function Header({ isMovile }: Client) {
                     <p className='main__slogan roboto'>Disfruta de tu comida rodeado de naturaleza</p>
                   </div>
                   <button className='button'>Ver Menu</button>
-
                 </div>
               }
             />
@@ -52,6 +51,7 @@ export default function Header({ isMovile }: Client) {
           }
           .header__content{
             display: flex;
+            position: relative;
             justify-content: center;
             flex-direction: column;
             align-items: center;
@@ -60,6 +60,7 @@ export default function Header({ isMovile }: Client) {
             height: inherit;
             font-size: 40px;
             text-align: center;
+            z-index: 1;
           }
           
           .header__content__contact{
@@ -68,12 +69,13 @@ export default function Header({ isMovile }: Client) {
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            z-index: 1;
             color: white;
             left: 3rem;
             height: 70%;
-            font-family: var(--roboto)
+            font-family: var(--roboto);
+            z-index: 2;
           }
+         
           .header__content__contact a{
             font-size: 20px;
             color: var(--white);
@@ -87,7 +89,7 @@ export default function Header({ isMovile }: Client) {
             font-family: var(--roboto);
             writing-mode: vertical-rl;
             margin-bottom: 3rem;
-            z-index: 2;
+          
           }
           .header__content__contact p::after{
             position: absolute;
@@ -96,10 +98,10 @@ export default function Header({ isMovile }: Client) {
             margin-top: 10px;
             margin-right: 5px;
             border-right: 2px solid var(--white);
-            z-index: 10;
+            z-index: 2;
           }
           .header__main{
-            z-index: 1;
+            z-index: 4;
           }
           
           .main__slogan{

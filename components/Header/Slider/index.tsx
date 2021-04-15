@@ -2,24 +2,27 @@
 import Image from "next/image";
 import { memo } from "react";
 import useSlider from "../../../hooks/useCarrousel";
-
+// poner un div a la par de este slde absolute 100 100
 const Slider = ({ imgs, interval }: { imgs: string[], interval: number }) => {
 
   const i = useSlider(imgs.length, interval)
 
   return (<>
     <div className='slide'>
+      <div id='pantalla' />
       {imgs.map((img, aux) =>
       (
         <div className={`img ${i == aux ? 'show' : 'none'}`}
           key={aux}
         >
           <Image
-            src={img}
+            loading='eager'
 
+            src={img}
             alt={img}
             layout='fill'
             objectFit='cover'
+
           />
         </div>
       )
@@ -27,15 +30,18 @@ const Slider = ({ imgs, interval }: { imgs: string[], interval: number }) => {
     </div>
     <style jsx>{`
       .slide {
-        background: linear-gradient(to right,rgba(68, 61, 61,.4),rgba(199, 96, 96, 0.4)); 
         position: absolute;
         height: 100%;
         width: 100%;
       }  
-      .img{
+      #pantalla{
+        position: absolute;
         background: linear-gradient(to right,rgba(68, 61, 61,.4),rgba(199, 96, 96, 0.4)); 
-
+        height: 100%;
+        width: 100%;
+        z-index: 1;
       }
+     
       .none{
         display: none;
         will-change: opacity;

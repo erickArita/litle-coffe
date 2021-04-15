@@ -1,10 +1,13 @@
 import Image from "next/image"
-import { BsPersonCheck } from "react-icons/bs"
+ import { BsPersonCheck } from "react-icons/bs"
+ 
+const Experience = () => {
 
-function Experience() {
+  
+
   return (
     <>
-      <section className='experience'>
+      <section className='experience' >
         <h2 className='subtitle pink cursiva'>Tu experiencia</h2>
         <div className="card">
           <ul className='experience__list'>
