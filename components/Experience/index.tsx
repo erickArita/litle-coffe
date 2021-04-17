@@ -2,9 +2,6 @@ import Image from "next/image"
  import { BsPersonCheck } from "react-icons/bs"
  
 const Experience = () => {
-
-  
-
   return (
     <>
       <section className='experience' >

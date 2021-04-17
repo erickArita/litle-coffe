@@ -17,12 +17,10 @@ const Slider = ({ imgs, interval }: { imgs: string[], interval: number }) => {
         >
           <Image
             loading='eager'
-
             src={img}
             alt={img}
             layout='fill'
             objectFit='cover'
-
           />
         </div>
       )

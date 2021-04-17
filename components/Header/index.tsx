@@ -1,9 +1,9 @@
 import Slider from './Slider'
-import { FaFacebook } from "react-icons/fa";
-import { use100vh } from 'react-div-100vh';
+import { FaFacebook } from "react-icons/fa"
+import { use100vh } from 'react-div-100vh'
 import { Client } from '../../pages'
-import { Parallax } from 'react-parallax';
-import { useMemo } from 'react';
+import { useMemo } from 'react'
+import scrollPolify from 'animated-scroll-to'
 export default function Header({ isMovile }: Client) {
 
   const height = use100vh()
@@ -28,19 +28,15 @@ export default function Header({ isMovile }: Client) {
             </div>
           </div>
           <div className='header__main'>
-            <Parallax
-              strength={200}
-              renderLayer={por =>
-                <div style={{ marginBottom: '4rem', marginTop: `${por * 8}rem` }}>
-                  <div>
-                    <h1 className='title'><span lang='en'>the litle coffee</span>
-                    </h1>
-                    <p className='main__slogan roboto'>Disfruta de tu comida rodeado de naturaleza</p>
-                  </div>
-                  <button className='button'>Ver Menu</button>
-                </div>
-              }
-            />
+
+            <div>
+              <h1 className='title'><span lang='en'>the litle coffee</span>
+              </h1>
+              <p className='main__slogan roboto'>Disfruta de tu comida rodeado de naturaleza</p>
+            </div>
+            <button className='button'
+              onClick={() => scrollPolify(document.querySelector('.specials'))}
+            >Ver Menu</button>
           </div>
           <Slider imgs={imgs} interval={10000} />
         </div>

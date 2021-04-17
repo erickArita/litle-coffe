@@ -12,11 +12,16 @@ export type Client = { isMovile: boolean }
 function IndexPage({ isMovile }: Client) {
   const { setTransparent } = useNavContext()
   const mobile = isMovile ? 'Mobile' : ''
-  const [setNode, { isIntersecting }] = useInView({threshold:0.19})
+
+  const [setNode, entry] = useInView({ threshold: 0.1, rootMargin: '10px 0px 0px 0px' })
 
   useEffect(() => {
-    isIntersecting ? setTransparent(false) : setTransparent(true)
-  }, [isIntersecting])
+    afterOfHeader(entry.isIntersecting)
+  }, [entry])
+  
+  const afterOfHeader = (downOfHeader: boolean) => {
+    downOfHeader ? setTransparent(false) : setTransparent(true)
+  }
 
   return (
     <>

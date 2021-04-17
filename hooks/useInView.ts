@@ -5,23 +5,23 @@ interface UseInView {
   rootMargin?: string
 }
 
-const useInView = ({ root = null, rootMargin = '0px', threshold = 1 }: UseInView): [
+const useInView = ({ root = null, rootMargin = '0px', threshold = 0.1 }: UseInView): [
   (setNode: HTMLElement | any) => void, IntersectionObserverEntry
 ] => {
 
   const [entry, setEntry] = useState<any>({})
   const [node, setNode] = useState<HTMLElement>()
   const observer = useRef<IntersectionObserver>()
-
+  
   useEffect(() => {
     if (observer.current) observer.current.disconnect()
-
+    
     const options = {
       root,
       rootMargin,
       threshold,
     }
-
+    
     observer.current = new IntersectionObserver(([entry]) => setEntry(entry), options);
 
     const { current: currentObserver } = observer
@@ -31,7 +31,7 @@ const useInView = ({ root = null, rootMargin = '0px', threshold = 1 }: UseInView
     return () => currentObserver.disconnect()
 
   }, [node, rootMargin, root, threshold])
-
+ 
   return [setNode, entry]
 }
 

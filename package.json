@@ -9,6 +9,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "animated-scroll-to": "^2.2.0",
     "next": "^10.1.3",
     "normalize.css": "^8.0.1",
     "react": "^17.0.2",
