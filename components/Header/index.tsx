@@ -35,6 +35,7 @@ export default function Header({ isMovile }: Client) {
               <p className='main__slogan roboto'>Disfruta de tu comida rodeado de naturaleza</p>
             </div>
             <button className='button'
+              // @ts-ignore
               onClick={() => scrollPolify(document.querySelector('.specials'))}
             >Ver Menu</button>
           </div>
@@ -109,7 +110,7 @@ export default function Header({ isMovile }: Client) {
          
 
         @media (max-width:768px){
-        /*media queries para el contenido a la izquierda  */
+        /*media queries para el contenido a la izquierda redes sociales */
           .header__content__contact{
             height: max-content;
             flex-direction: row;
