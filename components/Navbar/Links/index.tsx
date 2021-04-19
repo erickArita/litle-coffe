@@ -1,6 +1,10 @@
 import Link from "next/link"
+import useScroll from "../../../hooks/useScroll"
 
-const Links = ({ showMenu, transparent }: { showMenu: boolean, transparent: boolean }) => {
+const Links = ({ showMenu, transparent }: {
+  showMenu: boolean,
+  transparent: boolean,
+}) => {
   const changeColorLink = (): string => !transparent ? 'dark' : 'white'
   return (
     <>
@@ -8,24 +12,37 @@ const Links = ({ showMenu, transparent }: { showMenu: boolean, transparent: bool
 
         <li className='link'>
           <Link href="/">
-            <a className={`${changeColorLink()}`}>inicio</a>
+            <a onClick={() => useScroll('.header')}
+              className={`${changeColorLink()}`}>inicio</a>
+          </Link>
+        </li>
+        <li className='link'>
+          <Link href="/#experience" >
+            <a className={`${changeColorLink()}`}
+              onClick={() => useScroll('#experience')}>Experiencia</a>
+          </Link>
+        </li>
+        <li className='link'>
+          <Link href="/#speciales">
+            <a className={`${changeColorLink()}`}
+              onClick={() => useScroll('#speciales')}>Especiales</a>
+          </Link>
+        </li>
+        <li className='link'>
+          <Link href="/#menu">
+            <a className={`${changeColorLink()}`}
+              onClick={() => useScroll('#menu')}>menu</a>
           </Link>
         </li>
 
         <li className='link'>
-          <Link href="/nosotros"  >
+          <Link href="/nosotros">
             <a className={`${changeColorLink()}`}>nosotros</a>
-          </Link>
-        </li>
-
-        <li className='link'>
-          <Link href="/contacto">
-            <a className={`${changeColorLink()}`}>contacto</a>
           </Link>
         </li>
       </ul>
       <style jsx>{`
-      .links{
+        .links {
           display: flex;
           justify-content: space-around;
         }
@@ -80,13 +97,13 @@ const Links = ({ showMenu, transparent }: { showMenu: boolean, transparent: bool
             animation: openMenu .5s both;
           }
           .mobileMenu--close{
-            top: -11rem;
+            top: -15rem;
             animation: closeMenu .5s both;
           }
         }
         @keyframes openMenu {
           from {
-            transform: translateY(-10rem);
+            transform: translateY(-15rem);
           }
 
           to {
@@ -95,7 +112,7 @@ const Links = ({ showMenu, transparent }: { showMenu: boolean, transparent: bool
         }
         @keyframes closeMenu {
           from {
-            transform: translateY(10rem);
+            transform: translateY(15rem);
           }
 
           to {

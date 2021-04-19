@@ -36,7 +36,7 @@ export default function Header({ isMovile }: Client) {
             </div>
             <button className='button'
               // @ts-ignore
-              onClick={() => scrollPolify(document.querySelector('.specials'))}
+              onClick={() => scrollPolify(document.querySelector('#menu'))}
             >Ver Menu</button>
           </div>
           <Slider imgs={imgs} interval={10000} />
