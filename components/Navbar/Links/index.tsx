@@ -37,7 +37,23 @@ const Links = ({ showMenu, transparent }: {
 
         <li className='link'>
           <Link href="/nosotros">
-            <a className={`${changeColorLink()}`}>nosotros</a>
+            <a className={`${changeColorLink()}`}
+              onClick={() => useScroll('.about')}
+            > nosotros</a>
+          </Link>
+        </li>
+        <li className='link'>
+          <Link href="/nosotros#location">
+            <a className={`${changeColorLink()}`}
+              onClick={() => useScroll('#location')}
+            >Ubicación</a>
+          </Link>
+        </li>
+        <li className='link'>
+          <Link href="/nosotros">
+            <a className={`${changeColorLink()}`}
+            onClick={() => useScroll('.contacto')}
+            >Contacto</a>
           </Link>
         </li>
       </ul>

@@ -51,7 +51,7 @@ const Navbar = () => {
           padding: 0 3rem;
           background-color: var(${transparent ? '--transparent' : '--white'});
           position: fixed;
-          width:100%;
+          width:100vw;
           box-sizing: border-box;
           top: 0;
           z-index: 2;

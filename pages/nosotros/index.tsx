@@ -1,5 +1,6 @@
 import { useEffect } from "react"
 import About from "../../components/About"
+import Contact from "../../components/contact/Contact"
 import Location from "../../components/Location"
 import { useNavContext } from "../../services/navbar/navBarColor"
 
@@ -13,9 +14,7 @@ const AboutPage = () => {
     <>
       <About />
       <Location />
-      <section className="contacto">
-
-      </section>
+      <Contact />
     </>
   )
 }
