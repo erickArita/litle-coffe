@@ -1,11 +1,11 @@
 import React, { useState } from "react"
 import { FaBeer, FaUtensils } from "react-icons/fa"
-import { desayuno } from "../../utils/menu"
+import { desayuno, almuerzos, bebidas, bebidasAlcoholicas, sopas } from "../../utils/menu"
 import MenuItem from "./MenuItem"
 
 const Menu = () => {
   const [index, setIndex] = useState<number>(0)
- 
+
   return (
     <>
       <section className='menu '>
@@ -14,9 +14,13 @@ const Menu = () => {
             {
               index == 0 ? <>
                 <MenuItem food={desayuno} title='Desayunos/Cenas' />
-                <MenuItem food={desayuno} title='Almuerzos' />
+                <MenuItem food={almuerzos} title='Almuerzos' />
               </> :
-                <MenuItem food={desayuno} title='Almuerzos' />
+                <>
+                  <MenuItem food={bebidas} title='Bebidas' />
+                  <MenuItem food={bebidasAlcoholicas} title='Bebidas Alcoholicas' />
+                  <MenuItem food={sopas} title='Sopas' />
+                </>
             }
           </div>
           <div className='menu__food'>
