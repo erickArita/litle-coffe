@@ -36,6 +36,10 @@
   font-size: 50px;
   margin: 0;
 }
+.subtitle2{
+  font-size: 40px;
+  margin: 0;
+}
 .row{
   /* background-color: var(--white);
   margin: 2rem;

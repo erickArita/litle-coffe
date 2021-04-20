@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from 'next/image'
 import { FaBars } from "react-icons/fa";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { useNavContext } from "../../services/navbar/navBarColor";
 import Links from "./Links";
 import useScrollActive from "../../hooks/useScrolActive";

@@ -1,30 +1,33 @@
+import Image from "next/image"
+
 function About() {
   return (
     <>
-      <section className='about'>
+      <section className='about mt'>
         <div className="grid">
           <div className="about__text">
-            <h2 className='title'>Nosotros</h2>
+            <h2 className='subtitle'>Nosotros</h2>
             <p className='roboto'>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, repellat.
-              Lorem ipsum dolor sit amet
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, repellat.
-              Lorem ipsum dolor sit amet
+              Somos un restaurante nacido durante la pandemia en Santa Rita Copán, rodeado de todo tipo de flores exoticas y todo tipo de exquisita comida.
               </p>
           </div>
-          <img
+          <Image
             className='img'
             src="/rest/frontal.jpg"
             alt="máquina de cafes"
+            width={700}
+            height={200}
+            objectFit='cover'
+            layout='intrinsic'
           />
-          <img
-
-            className='img'
-            src="/food/cafe_pan.jpg"
-            alt='cafe con pan'
+          <Image
+            className='img item-c'
+            src="/personaln.jpg"
+            alt='cafe con pan' width={200}
+            height={200}
+            layout='intrinsic'
           />
-          <div className="about__text" >
-            <h2 className='title'>Nosotros</h2>
+          <div className="about__text  item-d" >
             <p className='roboto'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, repellat.
               Lorem ipsum dolor sit amet
@@ -32,20 +35,6 @@ function About() {
               Lorem ipsum dolor sit amet
               </p>
           </div>
-          {/* <div>
-            hola
-            </div>
-          <div className='row reverse'>
-            <div className="about__text">
-              <h2 className='title'>nosotros</h2>
-              <p className='roboto'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, repellat.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis similique natus eius, nostrum iure pariatur dolorem quo quaerat reiciendis facilis consectetur alias molestias dicta nulla recusandae illum commodi optio ut?
-              </p>
-            </div>
-            <div className="about__image">
-            </div>
-          </div> */}
 
         </div>
       </section>
@@ -66,21 +55,32 @@ function About() {
           width: auto;
           box-shadow: 0px 0px 20px 2px #5f7184;
         }
-        @media (max-width:750px){
+          .item-c {
+          }
+          .item-d {
+          }
+        @media (max-width:400px){
+          .about{
+            height: 120vh;
+            
+          }
           .grid{
             height: 100%;
-            grid-template-rows: repeat(3,33%);
+            grid-template-rows: repeat(4,25%);
             grid-template-columns:none;
+            
+          }
+          .item-c {
+            grid-row: 3 / 4;
+          }
+          .item-d {
 
+            grid-row: 3 / 4;
           }
-          .grid img:nth-child(3){
-            display: none;
-          }
-          
         }
         .title{
           font-size: 50px;
-          color: var(--orange-ligth)
+          color: var(--orange-ligth);
         }
         .about__text{
           display: flex;
