@@ -1,7 +1,7 @@
 
 import Image from "next/image";
 import { memo } from "react";
-import useSlider from "../../../hooks/useCarrousel";
+import useSlider from "../../hooks/useCarrousel";
 // poner un div a la par de este slde absolute 100 100
 const Slider = ({ imgs, interval }: { imgs: string[], interval: number }) => {
 

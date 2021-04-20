@@ -1,4 +1,4 @@
-import Slider from './Slider'
+import Slider from '../Slider'
 import { FaFacebook } from "react-icons/fa"
 import { use100vh } from 'react-div-100vh'
 import { Client } from '../../pages'

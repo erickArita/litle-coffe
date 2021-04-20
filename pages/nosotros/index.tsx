@@ -1,16 +1,21 @@
-import Link from 'next/link'
+import { use100vh } from "react-div-100vh"
+import Slider from "../../components/Slider"
 
-function AboutPage() {
- 
+const AboutPage = () => {
+  const height = use100vh()
+
+
   return (
     <>
-      <h1>About</h1>
-      <p>This is the about page</p>
-      <p>
-        <Link href="/">
-          <a>Go home</a>
-        </Link>
-      </p>
+      <section className='nosotros'>
+        <h1>Nosotros</h1>
+      </section>
+      <style jsx>{`
+        .nosotros{
+          min-height: ${height}px;
+
+        }
+      `}</style>
     </>
   )
 }
