@@ -18,14 +18,14 @@ function About() {
             width={700}
             height={200}
             objectFit='cover'
-            layout='intrinsic'
+            layout='responsive'
           />
           <Image
             className='img item-c'
             src="/personaln.jpg"
             alt='cafe con pan' width={200}
             height={200}
-            layout='intrinsic'
+            layout='responsive'
           />
           <div className="about__text  item-d" >
             <p className='roboto'>
@@ -59,7 +59,7 @@ function About() {
           }
           .item-d {
           }
-        @media (max-width:400px){
+        @media (max-width:500px){
           .about{
             height: 120vh;
             
@@ -67,14 +67,14 @@ function About() {
           .grid{
             height: 100%;
             grid-template-rows: repeat(4,25%);
-            grid-template-columns:none;
-            
+            grid-template-columns: none;
+            padding: 2rem;
           }
           .item-c {
             grid-row: 3 / 4;
+            
           }
           .item-d {
-
             grid-row: 3 / 4;
           }
         }
