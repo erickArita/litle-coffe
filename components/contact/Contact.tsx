@@ -65,7 +65,7 @@ const Contact = () => {
           <label htmlFor="textArea">Mensaje</label>
           <textarea name="mensaje" cols={30} rows={10} required ></textarea>
 
-          <button type='submit' className='button' disabled={validating}>Enviar</button>
+          <button type='submit' className='button mt' disabled={validating}>Enviar</button>
           <p className={`alert ${error ? 'error' : 'ok'}`}>{text}</p>
         </form>
       </section>
