@@ -1,11 +1,38 @@
-import React from 'react'
-
+import { FormEvent, useState, } from "react"
 const Contact = () => {
+
+  const [mesage, setMesage] = useState(['', false])
+  const [text, error] = mesage
+  const resetMesage = () => {
+    setTimeout(() => {
+      setMesage(['', false])
+    }, 5000);
+  }
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    // @ts-ignore
+    const form = new FormData(e.currentTarget);
+    const response = await fetch('https://formspree.io/f/mqkwaynb', {
+      body: form,
+      headers: {
+        'Accept': 'application/json'
+      },
+      method: 'POST'
+    })
+
+    if (response.ok) {
+      setMesage(['Mensaje enviado correctamente', true])
+      resetMesage()
+    } else {
+      setMesage(['Hubo un error al enviar, intentelo mas tarde', false])
+      resetMesage()
+    }
+  }
   return (
     <>
       <section className="contacto h100">
         <h2 className='subtitle2'>Contáctanos</h2>
-        <form className='mt' >
+        <form className='mt' onSubmit={handleSubmit} >
           <label htmlFor="nombre">Nombre</label>
           <input autoComplete='off' type="text" name='nombre' />
 
@@ -13,9 +40,10 @@ const Contact = () => {
           <input autoComplete='off' name='correo' type="email" />
 
           <label htmlFor="textArea">Mensaje</label>
-          <textarea name="textArea" cols={30} rows={10}  ></textarea>
+          <textarea name="mensje" cols={30} rows={10}  ></textarea>
 
-          <button className='button'>Enviar</button>
+          <button type='submit' className='button'>Enviar</button>
+          <p className={`${error ? 'ok' : 'error'}`}>{text}</p>
         </form>
       </section>
       <style jsx>{`
@@ -64,6 +92,15 @@ const Contact = () => {
         button{
           color: var(--white);
           background-color: var(--dark);
+        }
+        .ok,.error{
+          text-align: center;
+        }
+        .ok{
+          color: green;
+        }
+        .error{
+          color: darkred;
         }
         @media(max-width:425px){
           form{
