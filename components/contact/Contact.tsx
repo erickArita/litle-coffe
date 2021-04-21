@@ -2,32 +2,55 @@ import { FormEvent, useState, } from "react"
 const Contact = () => {
 
   const [mesage, setMesage] = useState(['', false])
+  const [validating, setValidating] = useState(false)
   const [text, error] = mesage
-  const resetMesage = () => {
-    setTimeout(() => {
-      setMesage(['', false])
+
+  const temporalMesage = (message: string, error: boolean = true) => {
+    setMesage([message, error])
+    let id
+    clearTimeout(id)
+    id = setTimeout(() => {
+      setMesage(['', error])
     }, 5000);
   }
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const validForm = (form: FormData) => {
+    if (form.get('nombre') == '' || form.get('mensaje') == '' || form.get('correo') == '') {
+      return false
+    } else {
+      return true
+    }
+  }
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    setValidating(true)
     // @ts-ignore
-    const form = new FormData(e.currentTarget);
+    const form = new FormData(e.currentTarget)
+    if (!validForm(form)) {
+      return temporalMesage('Llene todos los campos'), setValidating(false)
+    }
+    // @ts-ignore
+    sendData(form) && e.target.reset();
+    setValidating(false)
+  }
+
+  const sendData = async (form: FormData): Promise<boolean> => {
     const response = await fetch('https://formspree.io/f/mqkwaynb', {
+      method: 'POST',
       body: form,
       headers: {
         'Accept': 'application/json'
-      },
-      method: 'POST'
+      }
     })
 
     if (response.ok) {
-      setMesage(['Mensaje enviado correctamente', true])
-      resetMesage()
+      temporalMesage('Mensaje enviado correctamente', false)
+      return true
     } else {
-      setMesage(['Hubo un error al enviar, intentelo mas tarde', false])
-      resetMesage()
+      temporalMesage('Hubo un error al enviar, intentelo mas tarde')
+      return false
     }
   }
+
   return (
     <>
       <section id='contacto' className="contacto h100">
@@ -40,10 +63,10 @@ const Contact = () => {
           <input autoComplete='off' name='correo' type="email" />
 
           <label htmlFor="textArea">Mensaje</label>
-          <textarea name="mensje" cols={30} rows={10}  ></textarea>
+          <textarea name="mensaje" cols={30} rows={10}  ></textarea>
 
-          <button type='submit' className='button'>Enviar</button>
-          <p className={`${error ? 'ok' : 'error'}`}>{text}</p>
+          <button type='submit' className='button' disabled={validating}>Enviar</button>
+          <p className={`${error ? 'error' : 'ok'}`}>{text}</p>
         </form>
       </section>
       <style jsx>{`
@@ -92,6 +115,9 @@ const Contact = () => {
         button{
           color: var(--white);
           background-color: var(--dark);
+        }
+        button:disabled{
+          background-color: #ccc;
         }
         .ok,.error{
           text-align: center;
