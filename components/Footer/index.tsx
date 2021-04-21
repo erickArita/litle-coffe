@@ -37,6 +37,10 @@ export default function Footer() {
           margin-left: 1rem;
           height: max-content;
         }
+        @media (max-width:768px){
+         flex-direction: column;
+        }
+        
       `}</style>
     </>
   )

@@ -11,7 +11,7 @@ const Links = ({ showMenu, transparent }: {
       <ul className={`links mobileMenu ${showMenu ? 'mobileMenu--open' : 'mobileMenu--close'}`} >
 
         <li className='link'>
-          <Link href="/">
+          <Link href="/" >
             <a onClick={() => useScroll('.header')}
               className={`${changeColorLink()}`}>inicio</a>
           </Link>
