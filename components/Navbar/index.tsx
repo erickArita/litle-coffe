@@ -81,7 +81,7 @@ const Navbar = () => {
         #showMenuSpan{
           position: fixed;
           left: 0;
-          top: 14rem;
+          top: 17rem;
           height: 100vh;
           width: 100vw;
         }

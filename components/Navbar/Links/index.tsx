@@ -113,13 +113,13 @@ const Links = ({ showMenu, transparent }: {
             animation: openMenu .5s both;
           }
           .mobileMenu--close{
-            top: -15rem;
+            top: -20rem;
             animation: closeMenu .5s both;
           }
         }
         @keyframes openMenu {
           from {
-            transform: translateY(-15rem);
+            transform: translateY(-20rem);
           }
 
           to {
@@ -128,7 +128,7 @@ const Links = ({ showMenu, transparent }: {
         }
         @keyframes closeMenu {
           from {
-            transform: translateY(15rem);
+            transform: translateY(20rem);
           }
 
           to {
