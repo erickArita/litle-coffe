@@ -19,9 +19,7 @@ export default function Header({ isMovile }: Client) {
           <div className='header__content__contact'>
             <div  >
               <p>Más de nosotros</p>
-              <a href={isMovile ?
-                "fb://coffeethelittle" :
-                'https://www.facebook.com/coffeethelittle'}
+              <a href={'https://www.facebook.com/coffeethelittle'}
                 target='__blank'  >
                 <FaFacebook />
               </a>
