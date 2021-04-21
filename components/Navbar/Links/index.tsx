@@ -50,7 +50,7 @@ const Links = ({ showMenu, transparent }: {
           </Link>
         </li>
         <li className='link'>
-          <Link href="/nosotros">
+          <Link href="/nosotros#contacto">
             <a className={`${changeColorLink()}`}
             onClick={() => useScroll('.contacto')}
             >Contacto</a>

@@ -30,7 +30,7 @@ const Contact = () => {
   }
   return (
     <>
-      <section className="contacto h100">
+      <section id='contacto' className="contacto h100">
         <h2 className='subtitle2'>Contáctanos</h2>
         <form className='mt' onSubmit={handleSubmit} >
           <label htmlFor="nombre">Nombre</label>
