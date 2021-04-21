@@ -57,16 +57,16 @@ const Contact = () => {
         <h2 className='subtitle2'>Contáctanos</h2>
         <form className='mt' onSubmit={handleSubmit} >
           <label htmlFor="nombre">Nombre</label>
-          <input autoComplete='off' type="text" name='nombre' />
+          <input autoComplete='off' type="text" required name='nombre' />
 
           <label htmlFor="correo">Correo Electrónico</label>
-          <input autoComplete='off' name='correo' type="email" />
+          <input autoComplete='off' name='correo' required type="email" />
 
           <label htmlFor="textArea">Mensaje</label>
-          <textarea name="mensaje" cols={30} rows={10}  ></textarea>
+          <textarea name="mensaje" cols={30} rows={10} required ></textarea>
 
           <button type='submit' className='button' disabled={validating}>Enviar</button>
-          <p className={`${error ? 'error' : 'ok'}`}>{text}</p>
+          <p className={`alert ${error ? 'error' : 'ok'}`}>{text}</p>
         </form>
       </section>
       <style jsx>{`
@@ -87,6 +87,7 @@ const Contact = () => {
           justify-content: space-around;
           min-height: 550px;
           box-sizing: border-box;
+          position: relative;
         }
         input{
           height: .7rem;
@@ -127,6 +128,13 @@ const Contact = () => {
         }
         .error{
           color: darkred;
+        }
+        .alert{
+          position: absolute;
+          bottom: 0;
+          width: 300px;
+          left: 50%;
+          margin-left: -150px;
         }
         @media(max-width:425px){
           form{
