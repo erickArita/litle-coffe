@@ -32,7 +32,7 @@ function IndexPage({ isMovile }: Client) {
         </div>
         <Separator id='speciales' isMovile={isMovile} title='Especiales' img={`/makeCoffe${mobile}.webp`} />
         <Specials />
-        <Separator id='menu' isMovile={isMovile} height={800} title='Menu' img={`/camarera${mobile}.webp`} />
+        <Separator id='menu' isMovile={isMovile}  title='Menu' img={`/camarera${mobile}.webp`} />
         <Menu />
       </div>
     </>

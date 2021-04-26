@@ -78,7 +78,7 @@ const Contact = () => {
           justify-content: center;
         }          
         form  {
-          width: 450px;
+          max-width: 450px;
           display: flex;
           box-shadow: 0px 0px 20px 2px #d7dbe0;
           flex-direction: column;

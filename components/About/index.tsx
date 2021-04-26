@@ -8,7 +8,7 @@ function About() {
           <div className="about__text">
             <h2 className='subtitle'>Nosotros</h2>
             <p className='roboto'>
-              Somos un restaurante nacido durante la pandemia en Santa Rita Copán, rodeado de todo tipo de flores exoticas y todo tipo de exquisita comida.
+              Somos un restaurante nacido durante la pandemia en Santa Rita Copán, rodeado de todo tipo de flores .
               </p>
           </div>
           <Image
@@ -24,7 +24,7 @@ function About() {
             className='img item-c'
             src="/personaln.jpg"
             alt='cafe con pan' width={200}
-            height={200}
+            height={300}
             layout='responsive'
           />
           <div className="about__text  item-d" >
@@ -55,6 +55,9 @@ function About() {
           width: auto;
           box-shadow: 0px 0px 20px 2px #5f7184;
         }
+        .mt{
+          margin-top: 4rem;
+        }
           .item-c {
           }
           .item-d {
@@ -65,7 +68,7 @@ function About() {
             
           }
           .grid{
-            height: 100%;
+            height: 110%;
             grid-template-rows: repeat(4,25%);
             grid-template-columns: none;
             padding: 2rem;
