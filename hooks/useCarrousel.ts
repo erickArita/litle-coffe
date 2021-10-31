@@ -1,26 +1,52 @@
 import { useEffect, useState } from "react";
 
-const useSlider = (length: number, interval: number): number => {
+//write with typescript slider hook with autoplay
+export const useSlider = (images: string[], time = 10000) => {
+  const [currentImage, setCurrentImage] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(false);
 
-  const [index, setIndex] = useState<number>(0)
- 
-  function nextS() {
-    setIndex(index + 1)
-  }
-  function reset() {
-    setIndex(0)
-  }
-  function change() {
-    index >= length - 1 ? reset() : nextS()
-  }
-
-  // recuerda siempre pasarle como dependencia
-  //  lo que uses en el useEfect
   useEffect(() => {
-    let id = setInterval(change, interval)
-    return () => clearInterval(id)
-  }, [change])
+    const interval = setInterval(() => {
+      if (currentImage === images.length - 1) {
+        setCurrentImage(0);
+      } else {
+        setCurrentImage(currentImage + 1);
+      }
+    }, time);
 
-  return index
-}
-export default useSlider
+    return () => clearInterval(interval);
+  }, [currentImage, images.length]);
+
+  const handlePlay = () => {
+    setIsPlaying(true);
+  };
+
+  const handlePause = () => {
+    setIsPlaying(false);
+  };
+
+  const handlePrev = () => {
+    if (currentImage === 0) {
+      setCurrentImage(images.length - 1);
+    } else {
+      setCurrentImage(currentImage - 1);
+    }
+  };
+
+  const handleNext = () => {
+    if (currentImage === images.length - 1) {
+      setCurrentImage(0);
+    } else {
+      setCurrentImage(currentImage + 1);
+    }
+  };
+
+  return {
+    currentImage,
+    isPlaying,
+    handlePlay,
+    handlePause,
+    handlePrev,
+    handleNext
+  };
+};

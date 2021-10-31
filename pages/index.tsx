@@ -9,6 +9,7 @@ import useInView from '../hooks/useInView'
 import { useNavContext } from '../services/navbar/navBarColor'
 
 export type Client = { isMovile: boolean }
+
 function IndexPage({ isMovile }: Client) {
   const { setTransparent } = useNavContext()
   const mobile = isMovile ? 'Mobile' : ''

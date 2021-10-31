@@ -2,15 +2,11 @@ import Slider from '../Slider'
 import { FaFacebook } from "react-icons/fa"
 import { use100vh } from 'react-div-100vh'
 import { Client } from '../../pages'
-import { useMemo } from 'react'
 import scrollPolify from 'animated-scroll-to'
+
 export default function Header({ isMovile }: Client) {
 
   const height = use100vh()
-  const imgs: string[] = useMemo(() =>
-    isMovile ? ['/rest/mobile.webp', '/rest/mobile2.webp']
-      : ['/rest/restaurant.webp', '/rest/restaurant2.webp'],
-    [isMovile])
 
   return (
     <>
@@ -19,7 +15,7 @@ export default function Header({ isMovile }: Client) {
           <div className='header__content__contact'>
             <div  >
               <p>Más de nosotros</p>
-              <a href={'https://www.facebook.com/coffeethelittle'}
+              <a title='litleCoffee facebook' href={'https://www.facebook.com/coffeethelittle'}
                 target='__blank'  >
                 <FaFacebook />
               </a>
@@ -37,7 +33,7 @@ export default function Header({ isMovile }: Client) {
               onClick={() => scrollPolify(document.querySelector('#menu'))}
             >Ver Menu</button>
           </div>
-          <Slider imgs={imgs} interval={10000} />
+          <Slider isMovile={isMovile} />
         </div>
       </header>
       <style jsx>{`
@@ -84,7 +80,6 @@ export default function Header({ isMovile }: Client) {
             font-family: var(--roboto);
             writing-mode: vertical-rl;
             margin-bottom: 3rem;
-          
           }
           .header__content__contact p::after{
             position: absolute;

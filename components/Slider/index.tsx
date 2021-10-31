@@ -1,37 +1,32 @@
 
 import Image from "next/image";
-import { memo } from "react";
-import useSlider from "../../hooks/useCarrousel";
-const Slider = ({ imgs, interval }: { imgs: string[], interval: number }) => {
+import { useSlider } from "../../hooks/useCarrousel";
 
-  const i = useSlider(imgs.length, interval)
+const Slider = ({ isMovile }: { isMovile: boolean }) => {
 
-  return (<>
-    <div className='slide'>
-      <div id='pantalla' />
-      {imgs.map((img, aux) =>
-      (
-        <div className={`img ${i == aux ? 'show' : 'none'}`}
-          key={aux}
-        >
+  const imgs: string[] = isMovile ? ['/rest/mobile.webp', '/rest/mobile2.webp'] : ['/rest/restaurant.webp', '/rest/restaurant2.webp']
+  const { currentImage } = useSlider(imgs, 10000)
+
+  return (
+    <>
+      <div className='slide'>
+        <div id='pantalla' />
+        <div className={`img`}>
           <Image
             loading='eager'
-            src={img}
-            alt={img}
+            src={imgs[currentImage]}
+            alt='Restaurante'
             layout='fill'
             objectFit='cover'
-
           />
         </div>
-      )
-      )}
-    </div>
-    <style jsx>{`
+      </div>
+      <style jsx>{`
       .slide {
         position: absolute;
         height: 100%;
         width: 100%;
-      }  
+      }
       #pantalla{
         position: absolute;
         background: linear-gradient(to right,rgba(68, 61, 61,.4),rgba(199, 96, 96, 0.4)); 
@@ -70,9 +65,10 @@ const Slider = ({ imgs, interval }: { imgs: string[], interval: number }) => {
         }
       }
     `}</style>
-  </>)
+    </>
+  )
 }
-export default memo(Slider)
+export default Slider
 
 
 
