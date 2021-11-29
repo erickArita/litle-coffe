@@ -1,5 +1,5 @@
 import Link from "next/link"
-import useScroll from "../../../hooks/useScroll"
+import scrollTo from "../../../hooks/useScroll"
 
 const Links = ({ showMenu, transparent }: {
   showMenu: boolean,
@@ -12,47 +12,47 @@ const Links = ({ showMenu, transparent }: {
 
         <li className='link'>
           <Link href="/" >
-            <a onClick={() => useScroll('.header')}
+            <a onClick={() => scrollTo('.header')}
               className={`${changeColorLink()}`}>inicio</a>
           </Link>
         </li>
         <li className='link'>
           <Link href="/#experience" >
             <a className={`${changeColorLink()}`}
-              onClick={() => useScroll('#experience')}>Experiencia</a>
+              onClick={() => scrollTo('#experience')}>Experiencia</a>
           </Link>
         </li>
         <li className='link'>
           <Link href="/#speciales">
             <a className={`${changeColorLink()}`}
-              onClick={() => useScroll('#speciales')}>Especiales</a>
+              onClick={() => scrollTo('#speciales')}>Especiales</a>
           </Link>
         </li>
         <li className='link'>
           <Link href="/#menu">
             <a className={`${changeColorLink()}`}
-              onClick={() => useScroll('#menu')}>menu</a>
+              onClick={() => scrollTo('#menu')}>menu</a>
           </Link>
         </li>
 
         <li className='link'>
           <Link href="/nosotros">
             <a className={`${changeColorLink()}`}
-              onClick={() => useScroll('.about')}
+              onClick={() => scrollTo('.about')}
             > nosotros</a>
           </Link>
         </li>
         <li className='link'>
           <Link href="/nosotros#location">
             <a className={`${changeColorLink()}`}
-              onClick={() => useScroll('#location')}
+              onClick={() => scrollTo('#location')}
             >Ubicación</a>
           </Link>
         </li>
         <li className='link'>
           <Link href="/nosotros#contacto">
             <a className={`${changeColorLink()}`}
-            onClick={() => useScroll('.contacto')}
+            onClick={() => scrollTo('.contacto')}
             >Contacto</a>
           </Link>
         </li>
